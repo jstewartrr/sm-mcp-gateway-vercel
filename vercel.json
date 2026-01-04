@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "routes": [
+    { "src": "/health", "dest": "/api/health" },
+    { "src": "/mcp", "dest": "/api/mcp" },
+    { "src": "/sse", "dest": "/api/sse" },
+    { "src": "/refresh", "dest": "/api/refresh" },
+    { "src": "/tools", "dest": "/api/tools" },
+    { "src": "/(.*)", "dest": "/api/index" }
+  ],
+  "functions": {
+    "api/**/*.js": {
+      "maxDuration": 60
+    }
+  }
+}
