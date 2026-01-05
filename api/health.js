@@ -1,9 +1,9 @@
 // Health check endpoint - reports backend status
-// Fixed: Query actual MCP tools/list instead of relying on /health endpoint
+// v1.1.0 - Fixed URLs for all backends
 
 const BACKENDS = [
   { name: "azure-east", url: "https://sm-mcp-gateway.lemoncoast-87756bcf.eastus.azurecontainerapps.io" },
-  { name: "azure-west", url: "https://sm-mcp-gateway-west.salmonpond-dc38f680.westus.azurecontainerapps.io" },
+  { name: "azure-west", url: "https://sm-mcp-gateway-west.nicecliff-a1c1a3b6.westus2.azurecontainerapps.io" },
   { name: "aws-east", url: "https://sm-mcp-gateway-aws.vercel.app" }
 ];
 
