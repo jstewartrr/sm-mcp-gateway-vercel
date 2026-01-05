@@ -1,5 +1,5 @@
 // Health check endpoint - reports backend status
-// v1.1.0 - Fixed URLs for all backends
+// v1.2.0 - Increased timeout to 20s for slower backends
 
 const BACKENDS = [
   { name: "azure-east", url: "https://sm-mcp-gateway.lemoncoast-87756bcf.eastus.azurecontainerapps.io" },
@@ -10,9 +10,8 @@ const BACKENDS = [
 async function checkBackend(backend) {
   try {
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 10000);
+    const timeout = setTimeout(() => controller.abort(), 20000);  // 20 second timeout
     
-    // Query actual MCP tools/list - the real test of functionality
     const resp = await fetch(`${backend.url}/mcp`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
